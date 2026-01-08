@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+echo "Running frontend tests..."
+cd frontend && npm run test:run || exit 1
+
+echo "Running backend tests..."
+cd ../backend && ./venv/bin/pytest || exit 1
+
+echo "All tests passed!"

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Frontend lint and tests
+cd frontend
+npm run lint || exit 1
+npm run test:run || exit 1
+
+# Backend tests
+cd ../backend
+./venv/bin/pytest || exit 1
